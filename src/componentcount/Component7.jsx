@@ -2,99 +2,104 @@ import React from 'react'
 import { Maincom } from '../Structrue/Maincom'
 export const Component7 = () => {
   const codesnip = {
-    javascript: `\n // Get reference to the character element
-    const character = document.getElementById('character');
-   
-    // Character position variables  let posX = 0; let posY = 0;
+    java: `public class MathOperations {
+        // Method to add two integers
+        public int add(int a, int b) {
+            return a + b;
+        }
     
-
-    // Event listener for moving the character forward
-    document.('keydown', function(event) {
-        if (event.key === 'ArrowRight') {
-            // Move character forward (increase    posX += 10; position)
-            posX += 10;
-            character.style.left = posX + 'px';
+        // Method to add three integers
+        public int add(int a, int b, int c) {
+            return a + b + c;
         }
-    });
-
-    // Event listener for moving the character backward
-    document.('keydown', function(event) {
-        if (event.key === 'ArrowLeft') {
-            // Move character backward (decrease   posX -= 10;position)
-            posX -= 10;
-            character.style.left = posX + 'px';
+    
+        // Method to add two doubles
+        public double add(double a, double b) {
+            return a + b;
         }
-    });
-
-    // Event listener for making the character jump
-    document.('keydown', function(event) {
-        if (event.key === 'ArrowUp') {
-            // Move character upward (increase posY -= 100; position)
-            posY -= 100;
-            character.style.bottom = posY + 'px';
-
-            // Simulate gravity by resetting character's position after a short delay
-            setTimeout(() => {
-                posY = 0;
-                character.style.bottom = posY + 'px';
-            }, 500);
+    
+        // Method to concatenate two strings
+        public String add(String a, String b) {
+            return a + b;
         }
-    });
+        
+        // Method to add two integers and one double
+        public double add(int a, int b, double c) {
+            return a + b + c;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            MathOperations math = new MathOperations();
+    
+            // Calling overloaded methods
+            System.out.println("Addition of two integers: " + math.add(5, 3));
+            System.out.println("Addition of three integers: " + math.add(5, 3, 2));
+            System.out.println("Addition of two doubles: " + math.add(2.5, 3.5));
+            System.out.println("Concatenation of two strings: " + math.add("Hello, ", "World!"));
+            System.out.println("Addition of two integers and one double: " + math.add(5, 3, 2.5));
+        }
+    }
+    
     
     `}
     const answer = {
-      javascript: `\n  // Get reference to the character element
-      const character = document.getElementById('character');
-
-      // Character position variables   let posX = 0; let posY = 0;
-      let posX = 0;
-      let posY = 0;
-
-      // Event listener for moving the character forward
-      document.addEventListener('keydown', function(event) {
-          if (event.key === 'ArrowRight') {
-              // Move character forward (increase    posX += 10; position)
-              posX += 10;
-              character.style.left = posX + 'px';
-          }
-      });
-
-      // Event listener for moving the character backward
-      document.addEventListener('keydown', function(event) {
-          if (event.key === 'ArrowLeft') {
-              // Move character backward (decrease   posX -= 10;position)
-              posX -= 10;
-              character.style.left = posX + 'px';
-          }
-      });
-
-      // Event listener for making the character jump
-      document.addEventListener('keydown', function(event) {
-          if (event.key === 'ArrowUp') {
-              // Move character upward (increase posY -= 100; position)
-              posY -= 100;
-              character.style.bottom = posY + 'px';
-
-              // Simulate gravity by resetting character's position after a short delay
-              setTimeout(() => {
-                  posY = 0;
-                  character.style.bottom = posY + 'px';
-              }, 500);
-          }
-      });
+      java: `public class MathOperations {
+        // Method to add two integers
+        public int add(int a, int b) {
+            return a + b;
+        }
+    
+        // Method to add three integers
+        public int add(int a, int b, int c) {
+            return a + b + c;
+        }
+    
+        // Method to add two doubles
+        public double add(double a, double b) {
+            return a + b;
+        }
+    
+        // Method to concatenate two strings
+        public String add(String a, String b) {
+            return a + b;
+        }
+        
+        // Method to add two integers and one double
+        public double add(int a, int b, double c) {
+            return a + b + c;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            MathOperations math = new MathOperations();
+    
+            // Calling overloaded methods
+            System.out.println("Addition of two integers: " + math.add(5, 3));
+            System.out.println("Addition of three integers: " + math.add(5, 3, 2));
+            System.out.println("Addition of two doubles: " + math.add(2.5, 3.5));
+            System.out.println("Concatenation of two strings: " + math.add("Hello, ", "World!"));
+            System.out.println("Addition of two integers and one double: " + math.add(5, 3, 2.5));
+        }
+    }
+    
       `}
   return (
     <>
-    <Maincom  title={"Event Handling"}
-  game={"https://gunaasin.github.io/superlisatar/"}
+    <Maincom  title={"Method Overloading"}
+  game={"https://html-classic.itch.zone/html/4203615/index.html"}
   url={'https://videoconsole-lac.vercel.app/'}
-    steps={['Event Handling in JavaScript: In JavaScript, event handling is commonly done using the addEventListener method to attach event listeners to DOM elements. Event listeners can listen for various events, such as click, mouseover, keydown, submit, etc.',
-   
-    ' Event handling in programming refers to the process of capturing and responding to events that occur during the execution of a program. Events can include user interactions, such as clicking a button, typing on a keyboard, or resizing a window, as well as system-generated events like timers or network activity.',
-  
-    'Step 1: Adding an event listener for keypress events',
-    
-    'Step 2: Explain event propagation, including capturing and bubbling phases.',
+    steps={['Choose a weapon to craft',
+        
+        'Follow the prompts to select materials and attributes for the chosen weapon.',
+
+        'Receive a message indicating the completion of the crafting process.',
+
+        'The game ends after crafting the weapon.',
+
+
    ]}
        codesnip={codesnip}
        answer={answer}

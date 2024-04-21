@@ -75,20 +75,23 @@ const codesnip = {
       `}
   return (
     <>
-      <Maincom title={"Multithreading"}
+      <Maincom title={"Generics and Type Erasure"}
 
-       game={'https://dineshdiv.github.io/multithreading/'}
+       game={'https://html-classic.itch.zone/html/8547146/web/index.html'}
        url={'https://videoconsole-lac.vercel.app/?url=https://www.youtube.com/embed/_Ss42Vb1SU4'}
        
-        steps={['Scope refers to the visibility and accessibility of variables and functions in a particular context within a program. In JavaScript, variables and functions have different scopes, which determine where they can be accessed and how long they persist. There are mainly two types of scope in JavaScript',
-        'Global Scope:',
-        'Variables declared outside of any function or block have global scope. They can be accessed from any part of the codebase, including within functions and blocks. Global variables persist throughout the entire lifetime of the program.',
-        'Create a  "globalVariable" and value is "Goldcoin"',
-         'Local Scope:',
-         'Variables declared within a function or block have local scope.They are accessible only within the function or block in which they are declared. Local variables exist only as long as the function or block is executing.',
-         'create a varible "localVariable " inside function and value is "CoinWithstone"',
-         'In terms of comparing code with a coin game, you might create variables to represent the player score, the number of coins collected. These variables would likely have a local scope within the functions and globalscope,'
-        ]}
+        steps={['Understanding the Deck Class:  The Deck class represents a generic deck of cards.You can create a deck of playing cards or Uno cards using this class.',
+          
+          'Adding Cards to the Deck:  Use the addCard method of the Deck class to add cards to the deck.For playing cards, create instances of the PlayingCard class and add them to the playing card deck.For Uno cards, create instances of the UnoCard class and add them to the Uno card deck.',
+          
+          'Testing Type Erasure:  Use the Main class to create instances of decks and add cards to them.Try to perform type-specific operations, such as checking the type of cards in a deck.Note how type erasure affects the ability to perform type-specific operations at runtime.',
+          
+          'Run and Observe:  Compile and run the program.Observe the output and verify that decks of both playing cards and Uno cards can be created successfully.Notice how type erasure affects type-specific operations, such as checking the type of cards in a deck.',
+          
+          'Experiment and Learn:  Feel free to experiment with the code.Try adding more features to the game or modifying existing ones.Explore how generics and type erasure behave in different scenarios.',
+          
+          'Conclusion:  The game serves as a hands-on learning experience to understand how generics and type erasure work in Java.By experimenting with the provided code and observing the behavior, you will gain a better understanding of these concepts.'
+          ]}
          answer={answer}
          codesnip={codesnip}
 

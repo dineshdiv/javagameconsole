@@ -7,43 +7,75 @@ export const Component1 = () => {
 
 
   const codesnip = {
-    java: `public class ExceptionHandlingExample {
+    java: `public class Main {
       public static void main(String[] args) {
-          try {
-              // Code that might throw an exception
-              int result = divide(10, 0);
-              System.out.println("Result: " + result); // This line will not be reached if an exception occurs
-          } catch (ArithmeticException ) {
-              // Handling the exception
-              System.out.println("Error: Division by zero");
+          // Create and start a new thread
+          Thread thread = new Thread(new MyRunnable());
+          thread.start();
+          
+          // Main thread continues its execution
+          for (int i = 0; i < 5; i++) {
+              System.out.println("Main Thread: " + i);
+              try {
+                  Thread.sleep(1000); // Sleep for 1 second
+              } catch (InterruptedException e) {
+                  e.printStackTrace();
+              }
           }
       }
+  }
   
-      // Method that throws an exception
-      public static int divide(int dividend, int divisor) {
-          return dividend / divisor;
+  class MyRunnable implements Runnable {
+      @Override
+      public void run() {
+          // This code will be executed in a separate thread
+          for (int i = 0; i < 5; i++) {
+              System.out.println("Child Thread: " + i);
+              try {
+                  Thread.sleep(1000); // Sleep for 1 second
+              } catch (InterruptedException e) {
+                  e.printStackTrace();
+              }
+          }
       }
   }
+  
   
   `}
   const answer = {
-    java: `public class ExceptionHandlingExample {
+    java: `public class Main {
       public static void main(String[] args) {
-          try {
-              // Code that might throw an exception
-              int result = divide(10, 0);
-              System.out.println("Result: " + result); // This line will not be reached if an exception occurs
-          } catch (ArithmeticException e) {
-              // Handling the exception
-              System.out.println("Error: Division by zero");
+          // Create and start a new thread
+          Thread thread = new Thread(new MyRunnable());
+          thread.start();
+          
+          // Main thread continues its execution
+          for (int i = 0; i < 5; i++) {
+              System.out.println("Main Thread: " + i);
+              try {
+                  Thread.sleep(1000); // Sleep for 1 second
+              } catch (InterruptedException e) {
+                  e.printStackTrace();
+              }
           }
       }
+  }
   
-      // Method that throws an exception
-      public static int divide(int dividend, int divisor) {
-          return dividend / divisor;
+  class MyRunnable implements Runnable {
+      @Override
+      public void run() {
+          // This code will be executed in a separate thread
+          for (int i = 0; i < 5; i++) {
+              System.out.println("Child Thread: " + i);
+              try {
+                  Thread.sleep(1000); // Sleep for 1 second
+              } catch (InterruptedException e) {
+                  e.printStackTrace();
+              }
+          }
       }
   }
+  
   `}
 
   return (
@@ -51,23 +83,25 @@ export const Component1 = () => {
       
       <Maincom
 
-        game={'https://dineshdiv.github.io/exception-handling/'}
+        game={'https://dineshdiv.github.io/tictactoe/'}
         url={'https://videoconsole-lac.vercel.app/?url=https://www.youtube.com/embed/iyLqwyFL0Zc'}
         
        
         steps={[
-          'Define a fetchData function that simulates fetching data from a server asynchronously using a Promise. The function returns a Promise that resolves with the fetched data after a simulated delay of 2 seconds.',
-          'The startGame function serves as the entry point for the game. It initiates the quest to fetch data from the server using asynchronous code. Inside the function, we use await to wait for the fetchData promise to resolve, and then log the fetched data to the console.',
-          'If the data fetch is successful, the player completes the quest and sees a success message. If an error occurs during the fetch operation, an error message is logged to the console.',
-          '// Define a function to simulate fetching data from a server',
-          'return new Promise((virus) => {}',
-          '// Simulate fetching data variable asynchronously',
-          '// Simulate a delay of 2 seconds',
-          'What is Asynchronous Programming?',
+          'Server-Client Model: We have a server program running on a machine and multiple client programs running on different machines. Each client represents a player.',
+          'Multithreading on the Server: The server needs to handle multiple client connections concurrently. We can achieve this by using multithreading. Each time a new client connects, the server can spawn a new thread to handle communication with that client while still listening for new connections.',
 
-          `      Asynchronous programming is a programming paradigm that allows tasks to be executed independently of the main program flow. In other words, instead of waiting for a task to complete before moving on to the next one, asynchronous programming enables tasks to be executed concurrently, improving efficiency and responsiveness in applications.`
+          'Synchronization: Since multiple threads (each representing a client) will be accessing shared resources (like the game board), we need to ensure thread safety. We can use synchronization to control access to critical sections of code. For example, when a player makes a move, we want to ensure that only one player can modify the game board at a time.',
+          
+          'Client-Server Communication: Each client will continuously send messages to the server to update the game state (e.g., "Player X placed their mark at position (1,1)"). Similarly, the server will send messages to clients to inform them of the current game state (e.g., "Its now Player Os turn").',
+          
+          'Concurrency in Game Logic: Apart from handling client-server communication, the server also needs to manage the game logic. This involves determining whether a move is valid, checking for a win or draw, and updating the game state accordingly. These tasks can be executed concurrently to improve performance.',
+          
+          'Timeouts and Asynchronous Operations: We can implement timeouts for player moves to prevent one player from stalling the game indefinitely. Asynchronous operations can be used to handle timeouts without blocking the main execution thread.',
+          
+          'Error Handling and Exception Management: Since network operations and multithreading can introduce various types of errors, its crucial to handle exceptions properly to ensure the stability and reliability of the game.'
         ]}
-        title={"Exception Handling"}
+        title={"Concurrency and Multithreading"}
         answer={answer}
         codesnip={codesnip}
 

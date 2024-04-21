@@ -82,18 +82,25 @@ export const Component4 = () => {
   return (
     <>
 
-    <Maincom  title={"Closures"}
+    <Maincom  title={"Design Patterns"}
     answer={answer}
-    game={"https://gunaasin.github.io/firegunfire/"}
+    game={"https://html-classic.itch.zone/html/2361181/td1.0.3/index.html"}
     url={'https://videoconsole-lac.vercel.app/'}
-       steps={['Closures are a fundamental concept in programming where a function retains access to its surrounding lexical scope even after the outer function has finished executing. In simpler terms, a closure "closes over" the variables from its outer scope, allowing the function to access and manipulate those variables, even if they are not directly passed as arguments to the function.',
-       'Step 1: The createTarget function is a factory function that creates target objects with private variables such as isHit.',
-       'Step 2:  Inside createTarget, there are three inner functions: hit, isTargetHit, and getDistance. These functions form closures, retaining access to the isHit variable even after createTarget has finished executing.',
-       'Step 3:  The returned object from createTarget contains methods (hit, isTargetHit, getDistance) to interact with the target and retrieve its properties.',
-       'Step 4: target1 and target2 hit and scores are (10,10) (15,20)',     
-       'Step 5:   Each target created with createTarget encapsulates its hit status and distance within its closure, ensuring that the target s properties are accessed and modified only through the provided methods.',
-       'Explanation:  In this example, outerFunction defines an inner function innerFunction. innerFunction accesses a variable outerVariable declared in the scope of outerFunction. Even after outerFunction has finished executing, innerFunction maintains access to outerVariable. This is closure: the inner function "closes over" the outer variable, retaining access to it. When innerFunction is called, it successfully accesses and logs the value of outerVariable, demonstrating closure.',
+       steps={['Starting the Game : Run the TowerDefenseGame class as the main class to start the game.',
        
+       'Placing Cannons : Use the Factory Method Pattern to create different types of cannons (e.g., BasicCannon, AdvancedCannon).Place cannons strategically along the enemy path to attack incoming enemies.',
+       
+       'Managing Resources : Implement the Singleton Pattern to ensure one instance of the game manager.The game manager keeps track of resources (e.g., currency) for building and upgrading cannons.',
+       
+       'Enemy Waves : Enemies spawn in waves, moving towards the destination.Use the Observer Pattern to notify cannons when enemies enter their range',
+       
+       'Upgrading Cannons : Employ the Decorator Pattern to enhance cannons with abilities or upgrades.Players use available resources to upgrade cannons, improving attack power, range, or special abilities.',
+       
+       'Cannon Strategies : Apply the Strategy Pattern to define different attack strategies for cannons.Cannons can utilize strategies such as single-target attack, area-of-effect attack, or rapid-fire attack.',
+       
+       'Special Abilities : Integrate the Command Pattern to implement cannon upgrade commands.Players execute upgrade commands to enhance cannon properties.',
+       
+       'Cannon States : Utilize the State Pattern to manage cannon states (e.g., idle, attacking, upgrading).Cannons transition between states based on their actions and game events.',
      
        ]}
        codesnip={codesnip}

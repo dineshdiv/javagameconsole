@@ -2,34 +2,53 @@ import React from 'react'
 import { Maincom } from '../Structrue/Maincom'
 export const Component5 = () => {
   const codesnip = {
-    javascript: `\n//create a let variable
-
-    // define let (result) = num add 5
-    let result = ; // (string concatenation)
+    java: `// Enum declaration for representing choices in Rock-Paper-Scissors game
+    enum Choice {
+        ROCK, PAPER, SCISSORS;
     
-  // assign == for type coercion
-    if () {
-        console.log("Equal"); //(type coercion: blue is coerced to a number)
-    } else {
-        console.log("Not equal");
+        // Method to determine the winner of a game round
+        public Result playAgainst(Choice opponent) {
+            if (this == opponent) {
+                return Result.DRAW;
+            }
+            switch (this) {
+                case ROCK:
+                    return (opponent == SCISSORS) ? Result.WIN : Result.LOSE;
+                case PAPER:
+                    return (opponent == ROCK) ? Result.WIN : Result.LOSE;
+                case SCISSORS:
+                    return (opponent == PAPER) ? Result.WIN : Result.LOSE;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + this);
+            }
+        }
     }
-  // assign === for type coercion
-    if () {
-        console.log("Equal");
-    } else {
-        console.log("Not equal"); // Output: "Not equal" (no type coercion: different types)
+    
+    // Enum to represent the result of a game round
+    enum Result {
+        WIN, LOSE, DRAW
     }
-   // Output: Not executed (0 coerced to false in a boolean context)
-   // Output:  executed (10 coerced to true in a boolean context)
-if (num) {
-    console.log("Truthy"); 
-} else {
-    console.log("Falsy"); 
-}  
+    
+    public class Main {
+        public static void main(String[] args) {
+            // Player and opponent choices
+            Choice playerChoice = Choice.ROCK;
+            Choice opponentChoice = Choice.SCISSORS;
+    
+            // Determine the result of the game round
+            Result result = playerChoice.playAgainst(opponentChoice);
+    
+            // Display the result
+            System.out.println("Player chose: " + playerChoice);
+            System.out.println("Opponent chose: " + opponentChoice);
+            System.out.println("Result: " + result);
+        }
+    }
+    
     
     `}
     const answer = {
-      javascript: `\n
+      java: `\n
       //create a let variable
       let num = "10";
       let blue = "10";
@@ -60,17 +79,23 @@ if (num) {
       `}
   return (
     <>
-    <Maincom  title={" Type Coercion"}
-    game={"https://gunaasin.github.io/typecongame/"}
+    <Maincom  title={"Enums"}
+    game={"https://dineshdiv.github.io/rock-paper-enums/"}
     url={'https://videoconsole-lac.vercel.app/'}
-      steps={['Type coercion is the process of automatically converting one data type to another in programming. It happens implicitly, often during operations involving different data types. Here a breakdown to explain type coercion:',
-        'Step 1:  create let num = "10"; &  let blue = "10";',
-      ' Implicit Conversion: Type coercion occurs automatically by the programming language, without the programmer explicitly writing conversion code. It allows the language to handle mixed data types in operations and comparisons.',
-      ' Data Type Conversion: Type coercion typically involves converting between primitive data types such as strings, numbers, and booleans. For example, converting a string to a number, or a boolean to a string.',
-      ' Contextual Conversion: The type conversion may vary depending on the operation or context in which it occurs. For example, in JavaScript, the addition operator (+) can concatenate strings if one operand is a string, even if the other operand is a number.',
-      ' Loose vs. Strict Coercion: Some programming languages, like JavaScript, have both loose (==) and strict (===) equality operators. Loose equality performs type coercion before comparison, while strict equality checks both the value and type without coercion.',
-      ' Potential Pitfalls: While type coercion can be convenient, it can sometimes lead to unexpected results or errors if not understood properly. Its essential for programmers to be aware of how type coercion works in their chosen language to avoid unintended consequences.',
-      'Explanation: JavaScript performs implicit type coercion when operands or values of different types are encountered in expressions. For example, when adding a string and a number, JavaScript converts the number to a string and concatenates them. Comparisons using loose equality (==) can also trigger type coercion, where JavaScript tries to make the operands have the same type before comparison. Developers can also perform explicit type conversion using built-in functions like Number(), String(), Boolean(), etc., to convert values from one type to another. Understanding type coercion is essential in JavaScript to avoid unexpected behavior and write more predictable code.',
+      steps={['The game "Rock, Paper, Scissors" is played between the player and the computer.',
+      
+      'Each player selects one of three options: rock, paper, or scissors.',
+      
+      'The winner is determined based on the rules:',
+      'Rock crushes scissors (rock wins against scissors).',
+      'Scissors cuts paper (scissors win against paper).',
+      'Paper covers rock (paper wins against rock).',
+      
+      'If both players choose the same option, the game is a draw.',
+      
+      'The players choice and the computers choice are revealed simultaneously.',
+      
+      'The game displays the result: win, lose, or draw.',
     
       ]}
       codesnip={codesnip}
